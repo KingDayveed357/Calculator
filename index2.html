@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normal calculator</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+    <div class="container  text-dark" id="container">
+        <!-- <i class="bi bi-calculator" id="lilCalc"style=""></i> -->
+        <div id="history"> 
+            <div class="historyDiv" > <i class="bi bi-trash" onclick="clearHisory()">Clear</i></div> 
+            
+            <div id="hist"></div><div class="line"><hr style="width: 60px; margin: 15px; height: 0.5vh; background-color: white;" onclick="closeHistory()">
+            </div>
+        </div>
+        <div id="bothDivs" class="both">
+            <div class="calculator" id="calcSpace">
+             
+            <form action="" id="form">
+                <div class="head" id="calc"><h1>Calculator</h1>
+                    <div>
+                        <div class="modal" id="modal">
+                            <p onclick="lightMode()">Light Mode</p>
+                            <p onclick="darkMode()">Dark Mode</p>
+                        </div>
+                        <i class="bi bi-three-dots-vertical" onclick="displayModal()"></i>
+                    </div>
+                </div>
+            </form>
+                <div class="form-group display"  style=" padding: 70px; display: flex; flex-wrap: wrap; flex-direction: column; justify-content: flex-start;align-items:start; margin-right: 10px;" id="calcSpace">
+                    <div class="screen" style="height: 10px; width: 100px; " id="screen"><h1 id="evaluate"></h1>
+                    <h1 id="result"></h1></div>
+                </div>
+           
+                <center>
+                    <hr style="width: 60px; margin: 15px; height: 0.5vh; background-color: white;" id="displayLine" onclick="displayHistory()">
+                </center>
+                <div class="buttons" id="buttons"> 
+                <div class="row">
+                    
+                    <input type="button" onclick="returnTozero()"  class="operator" value="AC">
+                    <button type="button" onclick="del()"  class="operator"><i class="bi bi-backspace"></i></button>
+                    <input type="button" onclick="display('%')" value="%" class="operator">
+                    <input type="button"  class="operator" onclick="display('/')" value="/" id="sign">
+                </div>
+                <!-- <br> -->
+                <div class="row ">
+                   <input type="button" onclick="display('7')" value="7">
+                   <input type="button" onclick="display('8')" value="8">
+                   <input type="button" onclick="display('9')" value="9">
+                   <input type="button"  class="operator" onclick="display('*')" value="x" id="sign">
+                </div>
+                <!-- <br> -->
+                <div class="row ">
+                    <input type="button" onclick="display('4')" value="4">
+                   <input type="button" onclick="display('5')" value="5">
+                   <input type="button" onclick="display('6')" value="6">
+                   <input type="button" class="operator" onclick="display('-')" value="-" id="sign">
+                </div>
+                <!-- <br> -->
+                <div class="row ">
+                    <input type="button" onclick="display('1')" value="1">
+                    <input type="button" onclick="display('2')" value="2">
+                    <input type="button" onclick="display('3')" value="3">
+                    <input type="button" class="operator" onclick="display('+')" value="+" id="sign">
+                </div>
+                <!-- <br> -->
+                <div class="row " >
+                    <button type="button" onclick="display('') = display.value.toString().slice(0,-1)"  class="operator"><i class="bi bi-recycle"></i></button>
+                    <input type="button" onclick="display('0')" value="0">
+                    <input type="button"  value=".">
+                    <input type="button" class="equal" value="=" onclick="resul()" >
+                </div>
+            </div>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+    <script src="bootstrap/js/jquery-3.4.0.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="index1.js"></script>
+</body>
+</html>
